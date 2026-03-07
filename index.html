@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -7,16 +8,19 @@
     <meta name="description" content="一个帮助你深度觉察内在感受、练习T语言沟通、冥想与自我探索的工具">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+Thai:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- 启动画面 -->
     <div id="splash-screen" class="splash-screen">
         <div class="splash-content">
             <div class="breath-circle"></div>
-            <h1 class="splash-title">觉 察</h1>
-            <p class="splash-subtitle">向内看，看见真实的自己</p>
+            <h1 class="splash-title" data-i18n="splashTitle">觉 察</h1>
+            <p class="splash-subtitle" data-i18n="splashSub">向内看，看见真实的自己</p>
         </div>
     </div>
 
@@ -25,10 +29,33 @@
         <!-- 顶部栏 -->
         <header id="app-header" class="app-header">
             <button class="header-btn back-btn" id="back-btn" style="display:none;" aria-label="返回">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
             </button>
-            <h2 class="header-title" id="header-title">觉察</h2>
-            <div class="header-right"></div>
+            <h2 class="header-title" id="header-title" data-i18n="appName">觉察</h2>
+            <div class="header-right">
+                <!-- 语言选择器 -->
+                <div class="lang-selector" id="lang-selector">
+                    <button class="lang-btn" id="lang-btn" aria-label="Switch language">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                        </svg>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <button class="lang-option" data-lang="zh">中文</button>
+                        <button class="lang-option" data-lang="en">English</button>
+                        <button class="lang-option" data-lang="ja">日本語</button>
+                        <button class="lang-option" data-lang="th">ไทย</button>
+                    </div>
+                </div>
+                <!-- 用户状态 -->
+                <div class="user-status" id="user-status"></div>
+            </div>
         </header>
 
         <!-- 页面容器 -->
@@ -48,10 +75,15 @@
 
                 <!-- 每日T语言推播 -->
                 <div class="daily-t-card" id="daily-t-card">
-                    <div class="daily-t-label">✨ 今日觉察语</div>
+                    <div class="daily-t-label" data-i18n="dailyLabel">✨ 今日觉察语</div>
                     <p class="daily-t-text" id="daily-t-text"></p>
                     <button class="daily-t-refresh" id="daily-t-refresh" aria-label="换一句">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M1 4v6h6" />
+                            <path d="M23 20v-6h-6" />
+                            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+                        </svg>
                     </button>
                 </div>
 
@@ -59,43 +91,43 @@
                 <div class="home-grid">
                     <div class="home-card" data-page="emotions">
                         <div class="home-card-icon">😊</div>
-                        <div class="home-card-title">情绪罗盘</div>
-                        <div class="home-card-desc">探索120+种情绪</div>
+                        <div class="home-card-title" data-i18n="cards.emotions.title">情绪罗盘</div>
+                        <div class="home-card-desc" data-i18n="cards.emotions.desc">探索120+种情绪</div>
                     </div>
                     <div class="home-card" data-page="questioning">
                         <div class="home-card-icon">🔍</div>
-                        <div class="home-card-title">深度发问</div>
-                        <div class="home-card-desc">多维度自我探索</div>
+                        <div class="home-card-title" data-i18n="cards.questioning.title">深度发问</div>
+                        <div class="home-card-desc" data-i18n="cards.questioning.desc">多维度自我探索</div>
                     </div>
                     <div class="home-card" data-page="recall">
                         <div class="home-card-icon">⏰</div>
-                        <div class="home-card-title">24h 回忆</div>
-                        <div class="home-card-desc">觉察过去24小时</div>
+                        <div class="home-card-title" data-i18n="cards.recall.title">24h 回忆</div>
+                        <div class="home-card-desc" data-i18n="cards.recall.desc">觉察过去24小时</div>
                     </div>
                     <div class="home-card" data-page="meditation">
                         <div class="home-card-icon">🧘</div>
-                        <div class="home-card-title">冥想空间</div>
-                        <div class="home-card-desc">T-Group 从这里开始</div>
+                        <div class="home-card-title" data-i18n="cards.meditation.title">冥想空间</div>
+                        <div class="home-card-desc" data-i18n="cards.meditation.desc">T-Group 从这里开始</div>
                     </div>
                     <div class="home-card" data-page="brain">
                         <div class="home-card-icon">🧠</div>
-                        <div class="home-card-title">感受模式</div>
-                        <div class="home-card-desc">从思考切换到感受</div>
+                        <div class="home-card-title" data-i18n="cards.brain.title">感受模式</div>
+                        <div class="home-card-desc" data-i18n="cards.brain.desc">从思考切换到感受</div>
                     </div>
                     <div class="home-card" data-page="dialogue">
                         <div class="home-card-icon">💬</div>
-                        <div class="home-card-title">觉察对话</div>
-                        <div class="home-card-desc">与内在角色对话</div>
+                        <div class="home-card-title" data-i18n="cards.dialogue.title">觉察对话</div>
+                        <div class="home-card-desc" data-i18n="cards.dialogue.desc">与内在角色对话</div>
                     </div>
                     <div class="home-card" data-page="actions">
                         <div class="home-card-icon">🏃</div>
-                        <div class="home-card-title">行动建议</div>
-                        <div class="home-card-desc">用身体放下头脑</div>
+                        <div class="home-card-title" data-i18n="cards.actions.title">行动建议</div>
+                        <div class="home-card-desc" data-i18n="cards.actions.desc">用身体放下头脑</div>
                     </div>
                     <div class="home-card" data-page="sharing">
                         <div class="home-card-icon">📝</div>
-                        <div class="home-card-title">分享句式</div>
-                        <div class="home-card-desc">T语言沟通模板</div>
+                        <div class="home-card-title" data-i18n="cards.sharing.title">分享句式</div>
+                        <div class="home-card-desc" data-i18n="cards.sharing.desc">T语言沟通模板</div>
                     </div>
                 </div>
             </section>
@@ -103,13 +135,8 @@
             <!-- ======== 情绪罗盘 ======== -->
             <section id="page-emotions" class="page">
                 <div class="page-intro">
-                    <p class="page-intro-text">点击任意情绪，了解它出现的场景以及如何与它相处</p>
-                    <div class="emotion-filters">
-                        <button class="filter-btn active" data-filter="all">全部</button>
-                        <button class="filter-btn" data-filter="negative">不舒服的感受</button>
-                        <button class="filter-btn" data-filter="neutral">中性</button>
-                        <button class="filter-btn" data-filter="positive">舒服的感受</button>
-                    </div>
+                    <p class="page-intro-text" id="emotions-intro-text"></p>
+                    <div class="emotion-filters" id="emotion-filters"></div>
                 </div>
                 <div class="emotions-grid" id="emotions-grid"></div>
                 <!-- 情绪详情弹窗 -->
@@ -161,24 +188,42 @@
         <!-- 底部导航 -->
         <nav class="bottom-nav" id="bottom-nav">
             <button class="nav-item active" data-page="home">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>
-                <span>首页</span>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+                </svg>
+                <span data-i18n="nav.home">首页</span>
             </button>
             <button class="nav-item" data-page="emotions">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                <span>情绪</span>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                    <line x1="9" y1="9" x2="9.01" y2="9" />
+                    <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+                <span data-i18n="nav.emotions">情绪</span>
             </button>
             <button class="nav-item" data-page="meditation">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 20c0-4 3-6 6-6s6 2 6 6"/><path d="M12 12v4"/></svg>
-                <span>冥想</span>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M6 20c0-4 3-6 6-6s6 2 6 6" />
+                    <path d="M12 12v4" />
+                </svg>
+                <span data-i18n="nav.meditation">冥想</span>
             </button>
             <button class="nav-item" data-page="dialogue">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-                <span>对话</span>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                </svg>
+                <span data-i18n="nav.dialogue">对话</span>
             </button>
             <button class="nav-item" data-page="more">
-                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
-                <span>更多</span>
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="12" cy="5" r="1" />
+                    <circle cx="12" cy="19" r="1" />
+                </svg>
+                <span data-i18n="nav.more">更多</span>
             </button>
         </nav>
 
@@ -189,26 +234,36 @@
                 <div class="more-menu-handle"></div>
                 <div class="more-menu-items">
                     <button class="more-menu-item" data-page="questioning">
-                        <span class="more-icon">🔍</span><span>深度发问</span>
+                        <span class="more-icon">🔍</span><span data-i18n="cards.questioning.title">深度发问</span>
                     </button>
                     <button class="more-menu-item" data-page="recall">
-                        <span class="more-icon">⏰</span><span>24h 回忆</span>
+                        <span class="more-icon">⏰</span><span data-i18n="cards.recall.title">24h 回忆</span>
                     </button>
                     <button class="more-menu-item" data-page="brain">
-                        <span class="more-icon">🧠</span><span>感受模式</span>
+                        <span class="more-icon">🧠</span><span data-i18n="cards.brain.title">感受模式</span>
                     </button>
                     <button class="more-menu-item" data-page="actions">
-                        <span class="more-icon">🏃</span><span>行动建议</span>
+                        <span class="more-icon">🏃</span><span data-i18n="cards.actions.title">行动建议</span>
                     </button>
                     <button class="more-menu-item" data-page="sharing">
-                        <span class="more-icon">📝</span><span>分享句式</span>
+                        <span class="more-icon">📝</span><span data-i18n="cards.sharing.title">分享句式</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts: i18n & auth first, then lang files, then modules -->
+    <script src="js/i18n.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/lang/emotions-lang.js"></script>
+    <script src="js/lang/dialogue-lang.js"></script>
+    <script src="js/lang/questioning-lang.js"></script>
+    <script src="js/lang/recall-lang.js"></script>
+    <script src="js/lang/meditation-lang.js"></script>
+    <script src="js/lang/brain-lang.js"></script>
+    <script src="js/lang/actions-lang.js"></script>
+    <script src="js/lang/sharing-lang.js"></script>
     <script src="js/emotions.js"></script>
     <script src="js/questioning.js"></script>
     <script src="js/recall.js"></script>
@@ -219,4 +274,5 @@
     <script src="js/sharing.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
