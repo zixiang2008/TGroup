@@ -4,8 +4,70 @@
     <view class="section-title">{{title}}</view>
     <view class="section-desc">{{intro}}</view>
   </view>
+
+  <!-- 基础问题（免登录） -->
   <view class="question-card" wx:for="{{questions}}" wx:key="index">
     <view class="question-text">{{item.q}}</view>
     <textarea class="answer-area" placeholder="{{writePlaceholder}}" value="{{item.answer}}" bindinput="onAnswer" data-index="{{index}}"></textarea>
+  </view>
+
+  <!-- 深度探索分隔 -->
+  <view style="margin:40rpx 0 20rpx;padding:20rpx;border-radius:16rpx;background:rgba(124,58,237,0.1);border:1rpx solid rgba(124,58,237,0.2);">
+    <view style="font-size:30rpx;font-weight:600;color:#a78bfa;">{{deepLabel}}</view>
+    <view wx:if="{{!isLoggedIn}}" style="margin-top:12rpx;">
+      <view style="font-size:24rpx;color:#9ca3af;margin-bottom:12rpx;">{{loginPrompt}}</view>
+      <button class="btn-primary" style="font-size:26rpx;padding:14rpx 30rpx;" bind:tap="showLogin">🔐 {{isLoggedIn ? '' : '登录 / 注册'}}</button>
+    </view>
+    <view wx:if="{{isLoggedIn}}" style="margin-top:12rpx;">
+      <view style="font-size:24rpx;color:#ef4444;margin-bottom:16rpx;">{{safetyNote}}</view>
+      <view class="question-card" wx:for="{{deepQuestions}}" wx:key="index">
+        <view class="question-text">{{item.q}}</view>
+        <textarea class="answer-area" placeholder="{{writePlaceholder}}" value="{{item.answer}}" bindinput="onDeepAnswer" data-index="{{index}}"></textarea>
+      </view>
+    </view>
+  </view>
+
+  <!-- 登录/注册弹窗 -->
+  <view class="auth-modal" wx:if="{{showAuthModal}}">
+    <view class="auth-overlay" bind:tap="closeAuthModal"></view>
+    <view class="auth-content">
+      <view class="auth-icon">{{authMode === 'login' ? '🔐' : '📝'}}</view>
+      <view class="auth-title">{{authMode === 'login' ? '登录' : '注册'}}</view>
+
+      <!-- 注册经验评估 -->
+      <view wx:if="{{showExpAssess}}">
+        <view style="font-size:28rpx;color:#e5e7eb;margin:20rpx 0 12rpx;text-align:left;">在开始之前，想了解一下你的背景：</view>
+        <view style="font-size:26rpx;color:#d1d5db;margin-bottom:20rpx;text-align:left;">
+          你对心理学自我探索/觉察练习是否有一些了解或经验？<text style="color:#9ca3af;">这将影响后续问题的深度，保护你的安全。</text>
+        </view>
+
+        <button style="display:block;width:100%;text-align:left;padding:20rpx;margin-bottom:12rpx;border-radius:12rpx;font-size:26rpx;border:1rpx solid {{authExpLevel === 'experienced' ? 'rgba(124,58,237,0.5)' : 'rgba(107,114,128,0.2)'}};background:{{authExpLevel === 'experienced' ? 'rgba(124,58,237,0.15)' : 'rgba(31,41,55,0.6)'}};color:{{authExpLevel === 'experienced' ? '#a78bfa' : '#d1d5db'}};" bind:tap="selectExpLevel" data-level="experienced">
+          ✅ 有经验 — 我有觉察/自我探索/心理咨询的经历，可以接触更深入的问题
+        </button>
+
+        <button style="display:block;width:100%;text-align:left;padding:20rpx;margin-bottom:12rpx;border-radius:12rpx;font-size:26rpx;border:1rpx solid {{authExpLevel === 'beginner' ? 'rgba(124,58,237,0.5)' : 'rgba(107,114,128,0.2)'}};background:{{authExpLevel === 'beginner' ? 'rgba(124,58,237,0.15)' : 'rgba(31,41,55,0.6)'}};color:{{authExpLevel === 'beginner' ? '#a78bfa' : '#d1d5db'}};" bind:tap="selectExpLevel" data-level="beginner">
+          🌱 初学者 — 我有一点了解但没有太多经验，希望温和地开始
+        </button>
+
+        <button style="display:block;width:100%;text-align:left;padding:20rpx;margin-bottom:20rpx;border-radius:12rpx;font-size:26rpx;border:1rpx solid {{authExpLevel === 'none' ? 'rgba(124,58,237,0.5)' : 'rgba(107,114,128,0.2)'}};background:{{authExpLevel === 'none' ? 'rgba(124,58,237,0.15)' : 'rgba(31,41,55,0.6)'}};color:{{authExpLevel === 'none' ? '#a78bfa' : '#d1d5db'}};" bind:tap="selectExpLevel" data-level="none">
+          🛡️ 完全没有 — 我是新手，请用最温和的方式引导我
+        </button>
+
+        <view style="font-size:22rpx;color:#9ca3af;margin-bottom:16rpx;text-align:left;">
+          💡 选择较低的经验等级可以避免触及可能引发不适的深层话题。你随时可以在设置中调整。
+        </view>
+
+        <button class="btn-primary auth-submit" bind:tap="confirmRegister" disabled="{{!authExpLevel}}">完成注册</button>
+      </view>
+
+      <!-- 用户名/PIN 输入 -->
+      <view wx:if="{{!showExpAssess}}">
+        <input class="auth-input" placeholder="用户名（2个汉字）" value="{{authUsername}}" bindinput="onAuthUsername" />
+        <input class="auth-input" placeholder="PIN码（4位数字）" type="number" maxlength="4" password value="{{authPin}}" bindinput="onAuthPin" />
+        <view class="auth-error">{{authError}}</view>
+        <button class="btn-primary auth-submit" bind:tap="submitAuth">{{authMode === 'login' ? '登录' : '下一步'}}</button>
+        <button class="auth-switch" bind:tap="switchAuthMode">{{authMode === 'login' ? '还没有账号？点击注册' : '已有账号？点击登录'}}</button>
+      </view>
+    </view>
   </view>
 </view>

@@ -5,6 +5,7 @@
     <view class="module-intro">
       <view class="section-title">{{selectTitle}}</view>
       <view class="section-desc">{{selectDesc}}</view>
+      <view wx:if="{{depthLabel}}" style="margin-top:8rpx;font-size:22rpx;color:#a78bfa;background:rgba(124,58,237,0.1);padding:8rpx 16rpx;border-radius:12rpx;display:inline-block;">{{depthLabel}}</view>
     </view>
     <view class="character-cards">
       <view class="character-card" wx:for="{{characters}}" wx:key="id" bind:tap="selectCharacter" data-id="{{item.id}}">

@@ -8,7 +8,8 @@
         "pages/brain/brain",
         "pages/dialogue/dialogue",
         "pages/actions/actions",
-        "pages/sharing/sharing"
+        "pages/sharing/sharing",
+        "pages/appendix/appendix"
     ],
     "window": {
         "navigationStyle": "custom",

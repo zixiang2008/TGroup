@@ -1,0 +1,33 @@
+<!-- 附录：身体感受词汇表 - appendix.wxml -->
+<view class="container page-content">
+  <view class="module-intro">
+    <view class="section-title">{{title}}</view>
+    <view class="section-desc">{{intro}}</view>
+  </view>
+
+  <!-- 搜索过滤 -->
+  <view style="margin-bottom:24rpx;">
+    <input class="template-input" placeholder="{{searchPlaceholder}}" value="{{searchText}}" bindinput="onSearch" />
+  </view>
+
+  <!-- 感受词汇网格 -->
+  <view class="emotions-grid" style="gap:12rpx;">
+    <view class="sensation-cell" wx:for="{{filteredSensations}}" wx:key="en" bind:tap="showSensation" data-index="{{index}}">
+      <view style="font-size:26rpx;font-weight:600;color:#f3f4f6;">{{item.en}}</view>
+      <view style="font-size:22rpx;color:#a78bfa;margin-top:4rpx;">{{item.zh}}</view>
+    </view>
+  </view>
+
+  <!-- 详情弹窗 -->
+  <view class="emotion-modal" wx:if="{{showDetail}}" bind:tap="closeDetail">
+    <view class="emotion-modal-content" catch:tap="preventClose">
+      <button class="modal-close" bind:tap="closeDetail">✕</button>
+      <view class="modal-emotion-name">{{detailData.en}}</view>
+      <view class="modal-emotion-en">{{detailData.zh}}</view>
+      <view class="modal-section-title">{{bodyPartLabel}}</view>
+      <view class="modal-text">{{detailData.bodypart}}</view>
+      <view class="modal-section-title">{{exampleLabel}}</view>
+      <view class="modal-text">{{detailData.example}}</view>
+    </view>
+  </view>
+</view>

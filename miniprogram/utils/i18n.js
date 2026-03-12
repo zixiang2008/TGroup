@@ -19,7 +19,8 @@ const ui = {
             brain: { title: '感受模式', desc: '从思考切换到感受' },
             dialogue: { title: '觉察对话', desc: '与内在角色对话' },
             actions: { title: '行动建议', desc: '用身体放下头脑' },
-            sharing: { title: '分享句式', desc: 'T语言沟通模板' }
+            sharing: { title: '分享句式', desc: 'T语言沟通模板' },
+            appendix: { title: '身体感受词汇', desc: '106个感受词汇表' }
         },
         dailyLabel: '✨ 今日觉察语',
         filters: { all: '全部', negative: '不舒服的感受', neutral: '中性', positive: '舒服的感受' },
@@ -52,7 +53,8 @@ const ui = {
             brain: { title: 'Feeling Mode', desc: 'Switch from thinking to feeling' },
             dialogue: { title: 'Inner Dialogue', desc: 'Talk with inner personas' },
             actions: { title: 'Action Tips', desc: 'Let your body quiet the mind' },
-            sharing: { title: 'T-Language', desc: 'Communication templates' }
+            sharing: { title: 'T-Language', desc: 'Communication templates' },
+            appendix: { title: 'Body Sensations', desc: '106 sensation vocabulary' }
         },
         dailyLabel: '✨ Daily Awareness',
         filters: { all: 'All', negative: 'Uncomfortable', neutral: 'Neutral', positive: 'Comfortable' },
@@ -85,7 +87,8 @@ const ui = {
             brain: { title: '感覚モード', desc: '思考から感覚へ' },
             dialogue: { title: '内なる対話', desc: '内なるペルソナと対話' },
             actions: { title: 'アクション', desc: '体で心を静める' },
-            sharing: { title: 'T言語', desc: 'コミュニケーションテンプレート' }
+            sharing: { title: 'T言語', desc: 'コミュニケーションテンプレート' },
+            appendix: { title: '身体感覚', desc: '106の感覚語彙' }
         },
         dailyLabel: '✨ 今日の気づき',
         filters: { all: 'すべて', negative: '不快な感情', neutral: '中性の感情', positive: '快い感情' },
@@ -118,7 +121,8 @@ const ui = {
             brain: { title: 'โหมดรับรู้', desc: 'เปลี่ยนจากคิดเป็นรู้สึก' },
             dialogue: { title: 'บทสนทนาภายใน', desc: 'สนทนากับตัวตนภายใน' },
             actions: { title: 'คำแนะนำ', desc: 'ใช้ร่างกายปล่อยวางจิตใจ' },
-            sharing: { title: 'ภาษา T', desc: 'แม่แบบการสื่อสาร' }
+            sharing: { title: 'ภาษา T', desc: 'แม่แบบการสื่อสาร' },
+            appendix: { title: 'ความรู้สึกร่างกาย', desc: '106 คำศัพท์ความรู้สึก' }
         },
         dailyLabel: '✨ การตระหนักรู้วันนี้',
         filters: { all: 'ทั้งหมด', negative: 'ไม่สบายใจ', neutral: 'เป็นกลาง', positive: 'สบายใจ' },
