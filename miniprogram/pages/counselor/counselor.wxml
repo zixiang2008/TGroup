@@ -1,0 +1,103 @@
+<!-- 专业咨询支持 - counselor.wxml -->
+<view class="container page-content">
+  <!-- 自定义导航栏 -->
+  <view class="custom-nav" style="padding-top:{{statusBarHeight}}px;">
+    <button class="nav-back" bind:tap="goBack">←</button>
+    <view class="nav-title">{{title}}</view>
+    <view class="nav-right"></view>
+  </view>
+  <view style="height:{{navHeight}}px;"></view>
+
+  <view class="module-intro">
+    <view class="section-title">{{title}}</view>
+    <view class="section-desc">{{intro}}</view>
+  </view>
+
+  <!-- 咨询师简介卡片 -->
+  <view class="counselor-profile-card">
+    <view class="counselor-avatar">🌿</view>
+    <view class="counselor-info">
+      <view class="counselor-name">Yue</view>
+      <view class="counselor-role">{{counselorRole}}</view>
+    </view>
+    <view class="counselor-bio">{{counselorBio}}</view>
+    <view class="counselor-tags">
+      <view class="character-tag" wx:for="{{counselorTags}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 25人线上会议机制 -->
+  <view class="counselor-meeting-card">
+    <view class="section-title" style="font-size:30rpx;">{{meetingTitle}}</view>
+    <view class="section-desc" style="margin-bottom:16rpx;">{{meetingDesc}}</view>
+
+    <!-- 进度条 -->
+    <view class="progress-bar-container">
+      <view class="progress-bar-bg">
+        <view class="progress-bar-fill" style="width:{{progressPercent}}%;"></view>
+      </view>
+      <view class="progress-text">{{currentCount}} / 25 {{personLabel}}</view>
+    </view>
+
+    <!-- 状态信息 -->
+    <view class="meeting-status" wx:if="{{!isFull}}">
+      <view class="status-icon">⏳</view>
+      <view class="status-text">{{waitingText}}</view>
+    </view>
+    <view class="meeting-status full" wx:if="{{isFull}}">
+      <view class="status-icon">🎉</view>
+      <view class="status-text">{{fullText}}</view>
+    </view>
+
+    <!-- 报名按钮 -->
+    <button class="btn-primary" style="margin-top:24rpx;width:100%;" bind:tap="signUp" wx:if="{{!hasSignedUp && !isFull}}">
+      {{signUpBtn}}
+    </button>
+    <view class="signed-up-badge" wx:if="{{hasSignedUp}}">
+      <text>✅ {{signedUpText}}</text>
+    </view>
+  </view>
+
+  <!-- 入群通知 -->
+  <view class="counselor-group-card">
+    <view class="section-title" style="font-size:30rpx;">{{groupTitle}}</view>
+    <view class="section-desc">{{groupDesc}}</view>
+
+    <view class="group-steps">
+      <view class="group-step" wx:for="{{groupSteps}}" wx:key="index">
+        <view class="step-number">{{index + 1}}</view>
+        <view class="step-text">{{item}}</view>
+      </view>
+    </view>
+
+    <!-- 入群方式 -->
+    <view class="group-action-card" bind:tap="copyGroupLink">
+      <view class="link-icon">💬</view>
+      <view style="flex:1;">
+        <view class="link-title">{{groupActionTitle}}</view>
+        <view class="link-url">{{groupActionDesc}}</view>
+      </view>
+      <view class="link-arrow">→</view>
+    </view>
+  </view>
+
+  <!-- 服务方式说明 -->
+  <view class="section-title" style="font-size:32rpx;margin-top:30rpx;">{{servicesTitle}}</view>
+  <view class="counselor-service-card" wx:for="{{services}}" wx:key="key">
+    <view class="service-icon">{{item.icon}}</view>
+    <view style="flex:1;">
+      <view class="service-name">{{item.name}}</view>
+      <view class="service-desc">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <!-- 网站链接 -->
+  <view class="knowledge-link-card" bind:tap="openWebsite">
+    <view class="link-icon">🌐</view>
+    <view style="flex:1;">
+      <view class="link-title">{{linkTitle}}</view>
+      <view class="link-url">www.beingyourself.love</view>
+    </view>
+    <view class="link-arrow">→</view>
+  </view>
+</view>

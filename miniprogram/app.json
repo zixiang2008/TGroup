@@ -9,7 +9,9 @@
         "pages/dialogue/dialogue",
         "pages/actions/actions",
         "pages/sharing/sharing",
-        "pages/appendix/appendix"
+        "pages/appendix/appendix",
+        "pages/knowledge/knowledge",
+        "pages/counselor/counselor"
     ],
     "window": {
         "navigationStyle": "custom",

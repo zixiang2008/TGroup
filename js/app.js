@@ -14,7 +14,9 @@
         brain: BrainModule,
         dialogue: DialogueModule,
         actions: ActionsModule,
-        sharing: SharingModule
+        sharing: SharingModule,
+        knowledge: KnowledgeModule,
+        counselor: CounselorModule
     };
     let currentPage = 'home';
 

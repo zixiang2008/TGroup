@@ -36,7 +36,9 @@ Page({
             { page: 'dialogue', icon: '💬' },
             { page: 'actions', icon: '🏃' },
             { page: 'sharing', icon: '📝' },
-            { page: 'appendix', icon: '📋' }
+            { page: 'appendix', icon: '📋' },
+            { page: 'knowledge', icon: '📚' },
+            { page: 'counselor', icon: '🤝' }
         ];
 
         const cards = cardData.map(c => ({

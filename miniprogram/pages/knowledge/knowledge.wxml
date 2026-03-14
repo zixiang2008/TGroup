@@ -1,0 +1,73 @@
+<!-- 专业知识库 - knowledge.wxml -->
+<view class="container page-content">
+  <!-- 自定义导航栏 -->
+  <view class="custom-nav" style="padding-top:{{statusBarHeight}}px;">
+    <button class="nav-back" bind:tap="goBack">←</button>
+    <view class="nav-title">{{title}}</view>
+    <view class="nav-right"></view>
+  </view>
+  <view style="height:{{navHeight}}px;"></view>
+
+  <view class="module-intro">
+    <view class="section-title">{{title}}</view>
+    <view class="section-desc">{{intro}}</view>
+  </view>
+
+  <!-- 身心灵三维方法 -->
+  <view class="section-title" style="font-size:32rpx;margin-top:20rpx;">{{dimensionTitle}}</view>
+  <view class="knowledge-dimensions">
+    <view class="dimension-card" wx:for="{{dimensions}}" wx:key="key">
+      <view class="dimension-icon">{{item.icon}}</view>
+      <view class="dimension-name">{{item.name}}</view>
+      <view class="dimension-desc">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <!-- 道的方式 -->
+  <view class="knowledge-tao-card">
+    <view class="section-title" style="font-size:30rpx;">{{taoTitle}}</view>
+    <view class="tao-text" wx:for="{{taoLines}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <!-- 六大专业方法 -->
+  <view class="section-title" style="font-size:32rpx;margin-top:30rpx;">{{methodsTitle}}</view>
+  <view class="knowledge-method-card" wx:for="{{methods}}" wx:key="key">
+    <view class="method-header">
+      <view class="method-icon">{{item.icon}}</view>
+      <view>
+        <view class="method-name">{{item.name}}</view>
+        <view class="method-author">{{item.author}}</view>
+      </view>
+    </view>
+    <view class="method-desc">{{item.desc}}</view>
+  </view>
+
+  <!-- 三大服务领域 -->
+  <view class="section-title" style="font-size:32rpx;margin-top:30rpx;">{{areasTitle}}</view>
+  <view class="knowledge-area-card" wx:for="{{areas}}" wx:key="key">
+    <view class="area-icon">{{item.icon}}</view>
+    <view style="flex:1;">
+      <view class="area-name">{{item.name}}</view>
+      <view class="area-desc">{{item.desc}}</view>
+    </view>
+  </view>
+
+  <!-- 适用人群 -->
+  <view class="section-title" style="font-size:32rpx;margin-top:30rpx;">{{forWhomTitle}}</view>
+  <view class="knowledge-for-card">
+    <view class="for-item" wx:for="{{forWhom}}" wx:key="index">
+      <text class="for-bullet">•</text>
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <!-- 网站链接 -->
+  <view class="knowledge-link-card" bind:tap="openWebsite">
+    <view class="link-icon">🌐</view>
+    <view style="flex:1;">
+      <view class="link-title">{{linkTitle}}</view>
+      <view class="link-url">www.beingyourself.love</view>
+    </view>
+    <view class="link-arrow">→</view>
+  </view>
+</view>

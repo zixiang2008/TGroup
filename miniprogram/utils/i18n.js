@@ -20,7 +20,9 @@ const ui = {
             dialogue: { title: '觉察对话', desc: '与内在角色对话' },
             actions: { title: '行动建议', desc: '用身体放下头脑' },
             sharing: { title: '分享句式', desc: 'T语言沟通模板' },
-            appendix: { title: '身体感受词汇', desc: '106个感受词汇表' }
+            appendix: { title: '身体感受词汇', desc: '106个感受词汇表' },
+            knowledge: { title: '专业知识库', desc: '身心灵整合疗愈知识' },
+            counselor: { title: '咨询支持', desc: '专业咨询师线上支持' }
         },
         dailyLabel: '✨ 今日觉察语',
         filters: { all: '全部', negative: '不舒服的感受', neutral: '中性', positive: '舒服的感受' },
@@ -54,7 +56,9 @@ const ui = {
             dialogue: { title: 'Inner Dialogue', desc: 'Talk with inner personas' },
             actions: { title: 'Action Tips', desc: 'Let your body quiet the mind' },
             sharing: { title: 'T-Language', desc: 'Communication templates' },
-            appendix: { title: 'Body Sensations', desc: '106 sensation vocabulary' }
+            appendix: { title: 'Body Sensations', desc: '106 sensation vocabulary' },
+            knowledge: { title: 'Knowledge Base', desc: 'Mind-Body-Spirit healing' },
+            counselor: { title: 'Counselor Support', desc: 'Professional online support' }
         },
         dailyLabel: '✨ Daily Awareness',
         filters: { all: 'All', negative: 'Uncomfortable', neutral: 'Neutral', positive: 'Comfortable' },
@@ -88,7 +92,9 @@ const ui = {
             dialogue: { title: '内なる対話', desc: '内なるペルソナと対話' },
             actions: { title: 'アクション', desc: '体で心を静める' },
             sharing: { title: 'T言語', desc: 'コミュニケーションテンプレート' },
-            appendix: { title: '身体感覚', desc: '106の感覚語彙' }
+            appendix: { title: '身体感覚', desc: '106の感覚語彙' },
+            knowledge: { title: '知識ベース', desc: '心身霊統合ヒーリング' },
+            counselor: { title: 'サポート', desc: '専門カウンセラー支援' }
         },
         dailyLabel: '✨ 今日の気づき',
         filters: { all: 'すべて', negative: '不快な感情', neutral: '中性の感情', positive: '快い感情' },
@@ -122,7 +128,9 @@ const ui = {
             dialogue: { title: 'บทสนทนาภายใน', desc: 'สนทนากับตัวตนภายใน' },
             actions: { title: 'คำแนะนำ', desc: 'ใช้ร่างกายปล่อยวางจิตใจ' },
             sharing: { title: 'ภาษา T', desc: 'แม่แบบการสื่อสาร' },
-            appendix: { title: 'ความรู้สึกร่างกาย', desc: '106 คำศัพท์ความรู้สึก' }
+            appendix: { title: 'ความรู้สึกร่างกาย', desc: '106 คำศัพท์ความรู้สึก' },
+            knowledge: { title: 'คลังความรู้', desc: 'ความรู้เยียวยาบูรณาการ' },
+            counselor: { title: 'การสนับสนุน', desc: 'ที่ปรึกษามืออาชีพ' }
         },
         dailyLabel: '✨ การตระหนักรู้วันนี้',
         filters: { all: 'ทั้งหมด', negative: 'ไม่สบายใจ', neutral: 'เป็นกลาง', positive: 'สบายใจ' },

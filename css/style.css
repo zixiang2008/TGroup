@@ -2664,3 +2664,440 @@ textarea {
     transform: translateY(-2px);
     box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5);
 }
+
+/* ============================================
+   知识库 & 咨询支持页面
+   ============================================ */
+
+.page-intro-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 8px;
+}
+
+/* -- 知识库 Section Title -- */
+.kb-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 24px 0 12px;
+    letter-spacing: 0.03em;
+}
+
+/* -- 三维方法卡片 -- */
+.kb-dimensions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.kb-dimension-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px 10px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.kb-dimension-card:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+}
+
+.kb-dim-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.kb-dim-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 6px;
+}
+
+.kb-dim-desc {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* -- 道卡片 -- */
+.kb-tao-card {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(161, 140, 209, 0.04));
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin: 16px 0;
+}
+
+.kb-tao-line {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 2;
+    font-style: italic;
+}
+
+/* -- 方法卡片 -- */
+.kb-method-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 10px;
+    transition: all 0.25s;
+}
+
+.kb-method-card:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+}
+
+.kb-method-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.kb-method-icon {
+    font-size: 1.5rem;
+}
+
+.kb-method-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.kb-method-author {
+    font-size: 0.7rem;
+    color: var(--text-accent);
+    margin-top: 2px;
+}
+
+.kb-method-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* -- 服务领域 -- */
+.kb-area-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-bottom: 10px;
+    transition: all 0.25s;
+}
+
+.kb-area-card:hover {
+    border-color: var(--border-glow);
+}
+
+.kb-area-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.kb-area-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.kb-area-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* -- 适用人群 -- */
+.kb-for-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 16px;
+}
+
+.kb-for-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 6px;
+}
+
+.kb-bullet {
+    color: var(--text-accent);
+    flex-shrink: 0;
+}
+
+/* -- 链接卡片 -- */
+.kb-link-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(161, 140, 209, 0.05));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    margin: 20px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+
+.kb-link-card:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+}
+
+.kb-link-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.kb-link-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-accent);
+}
+
+.kb-link-url {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.kb-link-arrow {
+    font-size: 1.1rem;
+    color: var(--text-accent);
+    margin-left: auto;
+}
+
+/* -- 咨询支持页面 -- */
+.cs-profile-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: var(--radius-xl);
+    padding: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.cs-avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(161, 140, 209, 0.08));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.cs-name {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.cs-role {
+    font-size: 0.75rem;
+    color: var(--text-accent);
+    margin-top: 4px;
+}
+
+.cs-bio {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: left;
+    margin: 14px 0;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius-sm);
+}
+
+.cs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+.cs-tag {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.12);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: var(--text-accent);
+}
+
+/* -- 会议卡片 -- */
+.cs-meeting-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 22px;
+    margin-bottom: 16px;
+}
+
+.cs-meeting-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.cs-progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cs-progress-fill {
+    height: 100%;
+    background: var(--gradient-main);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.cs-progress-text {
+    font-size: 0.78rem;
+    color: var(--text-accent);
+    text-align: center;
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+.cs-status {
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    background: rgba(139, 92, 246, 0.06);
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.cs-status.full {
+    background: rgba(34, 197, 94, 0.08);
+}
+
+.cs-signup-btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px;
+    background: var(--gradient-main);
+    color: white;
+    border: none;
+    border-radius: 22px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+}
+
+.cs-signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5);
+}
+
+.cs-signed-badge {
+    text-align: center;
+    padding: 12px;
+    margin-top: 14px;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    border-radius: var(--radius-md);
+    font-size: 0.82rem;
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+/* -- 入群卡片 -- */
+.cs-group-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 22px;
+    margin-bottom: 16px;
+}
+
+.cs-group-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.cs-steps {
+    margin: 12px 0;
+}
+
+.cs-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.cs-step-num {
+    width: 24px;
+    height: 24px;
+    background: var(--gradient-main);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    color: white;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.cs-step span:last-child {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.cs-group-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: left;
+}
+
+.cs-group-action:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(139, 92, 246, 0.12);
+}
