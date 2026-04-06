@@ -1,6 +1,6 @@
-/* ============================================
-   觉察 · 内在探索 - 全局样式
-   Design: 深色冥想主题 + 柔和渐变
+﻿/* ============================================
+   è§‰å¯Ÿ Â· å†…åœ¨æŽ¢ç´¢ - å…¨å±€æ ·å¼
+   Design: æ·±è‰²å†¥æƒ³ä¸»é¢˜ + æŸ”å’Œæ¸å˜
    ============================================ */
 
 /* ---- CSS Variables ---- */
@@ -1367,7 +1367,7 @@ textarea {
 }
 
 .brain-side li::before {
-    content: '·';
+    content: 'Â·';
     color: var(--text-muted);
 }
 
@@ -2207,7 +2207,6 @@ textarea {
     background: var(--accent-green);
 }
 
-/* ---- Meditation Module ---- */
 .meditation-intro h3 {
     font-family: var(--font-serif);
     font-size: 1.3rem;
@@ -2225,20 +2224,35 @@ textarea {
     margin-bottom: 20px;
 }
 
+/* -- Section labels -- */
+.med-section {
+    margin-bottom: 18px;
+}
+
+.med-section-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+/* -- Duration -- */
 .duration-options {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: center;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .duration-btn {
-    padding: 10px 18px;
+    padding: 8px 16px;
     border-radius: 20px;
     border: 1px solid var(--border-subtle);
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     transition: all 0.25s;
+    background: transparent;
 }
 
 .duration-btn.active {
@@ -2247,72 +2261,194 @@ textarea {
     border-color: var(--accent-purple);
 }
 
+/* -- Options grid (sounds, brainwave) -- */
+.med-options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.med-options-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.med-option-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 6px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.7rem;
+    transition: all 0.25s;
+    cursor: pointer;
+    min-width: 60px;
+    flex: 1;
+}
+
+.med-option-btn:hover {
+    border-color: var(--border-glow);
+    background: var(--bg-card-hover);
+}
+
+.med-option-btn.active {
+    border-color: var(--accent-purple);
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--text-accent);
+    box-shadow: 0 0 8px rgba(124, 58, 237, 0.2);
+}
+
+.med-option-icon {
+    font-size: 1.2rem;
+}
+
+.med-option-text {
+    font-size: 0.68rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.med-brainwave-hint {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.med-brainwave-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+/* -- Start button -- */
 .meditation-start-btn {
     display: block;
     width: 100%;
-    max-width: 220px;
-    margin: 0 auto;
+    max-width: 240px;
+    margin: 20px auto 0;
     padding: 14px;
     border-radius: var(--radius-lg);
     background: var(--gradient-calm);
     color: white;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 500;
     transition: all 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
+.meditation-start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+}
+
+/* -- Active session -- */
 .meditation-active {
+    position: relative;
+    min-height: 400px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.med-session-overlay {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    padding: 40px 0;
+    padding: 40px 16px 20px;
 }
 
 .meditation-timer {
     font-family: var(--font-serif);
     font-size: 3rem;
     color: var(--text-accent);
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     letter-spacing: 0.1em;
+    text-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
 }
 
 .meditation-breath {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     transition: all 0.5s ease;
 }
 
-.meditation-breath.phase-0 {
-    color: var(--accent-blue);
-}
-
-.meditation-breath.phase-2 {
-    color: var(--accent-teal);
-}
+.meditation-breath.phase-0 { color: var(--accent-blue); }
+.meditation-breath.phase-2 { color: var(--accent-teal); }
 
 .meditation-guide-text {
     font-family: var(--font-serif);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.7;
-    max-width: 300px;
-    margin: 20px auto;
+    max-width: 280px;
+    margin: 16px auto;
     transition: opacity 0.5s ease;
+    font-style: italic;
 }
 
+/* -- Volume controls -- */
+.med-volume-controls {
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+.med-vol-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.med-vol-icon {
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.med-vol-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: var(--border-subtle);
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.med-vol-slider:hover { opacity: 1; }
+
+.med-vol-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-purple);
+    cursor: pointer;
+}
+
+/* -- Controls -- */
 .meditation-controls {
     display: flex;
     gap: 12px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .med-ctrl-btn {
     padding: 10px 24px;
     border-radius: 20px;
     border: 1px solid var(--border-subtle);
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
     transition: all 0.25s;
+    background: transparent;
+    cursor: pointer;
 }
 
 .med-ctrl-btn:hover {
@@ -2320,6 +2456,7 @@ textarea {
     color: var(--text-accent);
 }
 
+/* -- Complete -- */
 .meditation-complete {
     text-align: center;
     padding: 60px 20px;
@@ -2328,6 +2465,147 @@ textarea {
 .complete-icon {
     font-size: 1.5rem;
     margin-bottom: 16px;
+}
+
+/* -- Prepare -- */
+.meditation-prepare {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.prepare-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: med-pulse 2s ease-in-out infinite;
+}
+
+.prepare-countdown {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-accent);
+}
+
+.prepare-text {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.prepare-sub {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+@keyframes med-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+/* ========== MEDITATION ANIMATIONS ========== */
+.med-animation-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
+
+/* -- Bubbles -- */
+.med-anim-bubbles {
+    background: radial-gradient(ellipse at 50% 100%, rgba(124,58,237,0.08) 0%, transparent 70%);
+}
+
+.med-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(167,139,250,0.4), rgba(124,58,237,0.15));
+    animation: med-bubble-rise linear infinite;
+    box-shadow: inset 0 -4px 8px rgba(255,255,255,0.1);
+}
+
+@keyframes med-bubble-rise {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: var(--bubble-opacity, 0.2); }
+    90% { opacity: var(--bubble-opacity, 0.2); }
+    100% { transform: translateY(-500px) scale(0.6); opacity: 0; }
+}
+
+/* -- Singing Bowl Rings -- */
+.med-anim-bowl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.med-bowl-ring {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(167,139,250,0.5);
+    animation: med-ring-expand 10s ease-out infinite;
+}
+
+@keyframes med-ring-expand {
+    0% { width: 40px; height: 40px; opacity: 0.6; border-width: 2px; }
+    100% { width: 350px; height: 350px; opacity: 0; border-width: 0.5px; }
+}
+
+/* -- Nature (leaves + fireflies) -- */
+.med-anim-nature {
+    background: radial-gradient(ellipse at 50% 80%, rgba(5,150,105,0.06) 0%, transparent 70%);
+}
+
+.med-leaf {
+    position: absolute;
+    top: -30px;
+    animation: med-leaf-fall linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes med-leaf-fall {
+    0% { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.4; }
+    100% { transform: translateY(500px) rotate(360deg) translateX(80px); opacity: 0; }
+}
+
+.med-firefly {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(250,204,21,0.7);
+    box-shadow: 0 0 6px rgba(250,204,21,0.5);
+    animation: med-firefly-glow ease-in-out infinite;
+}
+
+@keyframes med-firefly-glow {
+    0%, 100% { opacity: 0; transform: translate(0, 0); }
+    20% { opacity: 0.8; }
+    50% { opacity: 0.3; transform: translate(20px, -15px); }
+    80% { opacity: 0.7; }
+}
+
+/* -- Mobile -- */
+@media (max-width: 480px) {
+    .med-brainwave-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .meditation-timer {
+        font-size: 2.5rem;
+    }
+    .med-options-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* ---- Brain Module ---- */
@@ -2666,7 +2944,7 @@ textarea {
 }
 
 /* ============================================
-   知识库 & 咨询支持页面
+   çŸ¥è¯†åº“ & å’¨è¯¢æ”¯æŒé¡µé¢
    ============================================ */
 
 .page-intro-title {
@@ -2677,7 +2955,7 @@ textarea {
     margin-bottom: 8px;
 }
 
-/* -- 知识库 Section Title -- */
+/* -- çŸ¥è¯†åº“ Section Title -- */
 .kb-section-title {
     font-size: 1rem;
     font-weight: 600;
@@ -2686,7 +2964,7 @@ textarea {
     letter-spacing: 0.03em;
 }
 
-/* -- 三维方法卡片 -- */
+/* -- ä¸‰ç»´æ–¹æ³•å¡ç‰‡ -- */
 .kb-dimensions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2726,7 +3004,7 @@ textarea {
     line-height: 1.6;
 }
 
-/* -- 道卡片 -- */
+/* -- é“å¡ç‰‡ -- */
 .kb-tao-card {
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(161, 140, 209, 0.04));
     border: 1px solid rgba(139, 92, 246, 0.15);
@@ -2742,7 +3020,7 @@ textarea {
     font-style: italic;
 }
 
-/* -- 方法卡片 -- */
+/* -- æ–¹æ³•å¡ç‰‡ -- */
 .kb-method-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -2786,7 +3064,7 @@ textarea {
     line-height: 1.7;
 }
 
-/* -- 服务领域 -- */
+/* -- æœåŠ¡é¢†åŸŸ -- */
 .kb-area-card {
     display: flex;
     align-items: flex-start;
@@ -2822,7 +3100,7 @@ textarea {
     margin: 0;
 }
 
-/* -- 适用人群 -- */
+/* -- é€‚ç”¨äººç¾¤ -- */
 .kb-for-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -2845,7 +3123,7 @@ textarea {
     flex-shrink: 0;
 }
 
-/* -- 链接卡片 -- */
+/* -- é“¾æŽ¥å¡ç‰‡ -- */
 .kb-link-card {
     display: flex;
     align-items: center;
@@ -2890,7 +3168,7 @@ textarea {
     margin-left: auto;
 }
 
-/* -- 咨询支持页面 -- */
+/* -- å’¨è¯¢æ”¯æŒé¡µé¢ -- */
 .cs-profile-card {
     background: var(--bg-card);
     border: 1px solid rgba(139, 92, 246, 0.15);
@@ -2952,7 +3230,7 @@ textarea {
     color: var(--text-accent);
 }
 
-/* -- 会议卡片 -- */
+/* -- ä¼šè®®å¡ç‰‡ -- */
 .cs-meeting-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -3036,7 +3314,7 @@ textarea {
     font-weight: 500;
 }
 
-/* -- 入群卡片 -- */
+/* -- å…¥ç¾¤å¡ç‰‡ -- */
 .cs-group-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -3103,7 +3381,7 @@ textarea {
 }
 
 /* ============================================
-   v2.2.0 - 气球动画
+   v2.2.0 - æ°”çƒåŠ¨ç”»
    ============================================ */
 .balloon-mode {
     display: flex;
@@ -3236,7 +3514,7 @@ textarea {
 }
 
 /* ============================================
-   v2.2.0 - 冥想准备倒计时
+   v2.2.0 - å†¥æƒ³å‡†å¤‡å€’è®¡æ—¶
    ============================================ */
 .meditation-prepare {
     display: flex;
@@ -3309,7 +3587,7 @@ textarea {
 }
 
 /* ============================================
-   v2.2.0 - 分享增强
+   v2.2.0 - åˆ†äº«å¢žå¼º
    ============================================ */
 .sharing-scenes {
     margin-top: 1.5rem;
